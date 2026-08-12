@@ -202,11 +202,11 @@ class ModeAdjustAIAgent:
                     current_module = line.strip("= ").strip()
                     modules[current_module] = {"r_ports": 0, "p_ports": 0}
                 elif current_module and line.startswith("R-Ports("):
-                    match = re.search(r'R-Ports$$(\d+)$$:', line)
+                    match = re.search(r'R-Ports\((\d+)\):', line)
                     if match:
                         modules[current_module]["r_ports"] = int(match.group(1))
                 elif current_module and line.startswith("P-Ports("):
-                    match = re.search(r'P-Ports$$(\d+)$$:', line)
+                    match = re.search(r'P-Ports\((\d+)\):', line)
                     if match:
                         modules[current_module]["p_ports"] = int(match.group(1))
                         
