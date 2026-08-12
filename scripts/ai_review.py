@@ -19,7 +19,7 @@ class ModeAdjustAIAgent:
         
     def run_full_review(self):
         """执行完整的AI评审"""
-        print("🤖 Starting ModeAdjust AI Review...")
+        print("[AI] Starting ModeAdjust AI Review...")
         
         # 验证必要文件
         if not self._validate_required_files():
@@ -37,7 +37,7 @@ class ModeAdjustAIAgent:
             try:
                 check_func()
             except Exception as e:
-                print("⚠️  Check {} failed: {}".format(check_func.__name__, e))
+                print("[WARN] Check {} failed: {}".format(check_func.__name__, e))
                 continue
                 
         # 生成报告
@@ -45,7 +45,7 @@ class ModeAdjustAIAgent:
         
         # 输出结果摘要
         total_issues = len(self.issues)
-        print("✅ AI Review completed! Found {} issues ({} critical)".format(total_issues, self.critical_issues))
+        print("[OK] AI Review completed! Found {} issues ({} critical)".format(total_issues, self.critical_issues))
         
         # GitHub Actions兼容输出
         if self.critical_issues > 0:
@@ -193,8 +193,7 @@ class ModeAdjustAIAgent:
                 content = f.read()
                 
             current_module = None
-            lines = content.split('
-')
+            lines = content.splitlines()
             
             for line in lines:
                 line = line.strip()
@@ -202,16 +201,16 @@ class ModeAdjustAIAgent:
                     current_module = line.strip("= ").strip()
                     modules[current_module] = {"r_ports": 0, "p_ports": 0}
                 elif current_module and line.startswith("R-Ports("):
-                    match = re.search(r'R-Ports$$(\d+)$$:', line)
+                    match = re.search(r'R-Ports\((\d+)\):', line)
                     if match:
                         modules[current_module]["r_ports"] = int(match.group(1))
                 elif current_module and line.startswith("P-Ports("):
-                    match = re.search(r'P-Ports$$(\d+)$$:', line)
+                    match = re.search(r'P-Ports\((\d+)\):', line)
                     if match:
                         modules[current_module]["p_ports"] = int(match.group(1))
                         
         except Exception as e:
-            print("⚠️  Failed to parse module summary: {}".format(e))
+            print("[WARN] Failed to parse module summary: {}".format(e))
             
         return modules
         
@@ -256,10 +255,10 @@ def main():
     success = agent.run_full_review()
     
     if not success:
-        print("❌ AI Review failed - please fix critical issues before merging")
+        print("[FAIL] AI Review failed - please fix critical issues before merging")
         sys.exit(1)
     else:
-        print("✅ AI Review passed!")
+        print("[OK] AI Review passed!")
         sys.exit(0)
 
 if __name__ == "__main__":
