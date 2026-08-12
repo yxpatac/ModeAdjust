@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file was saved with a tool from Vector Informatik GmbH
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Platform</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataConstrs</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-CONSTR UUID="A78E1580-8841-4232-93AE-75B271460480">
+              <SHORT-NAME>DC_Boolean</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>PATAC</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Facility</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>BaseTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <SW-BASE-TYPE UUID="29FE9DBF-4857-4BD2-A87E-3031ADD9FDAA">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>BOOLEAN</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>unsigned char</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                    <SW-BASE-TYPE UUID="E379CED8-3AE2-4E83-B636-44CCC152692B">
+                      <SHORT-NAME>UInt8</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>uint8</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Implementation</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE UUID="5BE5B84C-402D-4D24-9A4B-D6526FE78341">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <BASE-TYPE-REF DEST="SW-BASE-TYPE">/PATAC/Facility/DataTypes/BaseTypes/Boolean</BASE-TYPE-REF>
+                            <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/DC_Boolean</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>MSM</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+              <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE UUID="95D52875-2207-42EC-9193-1B28533AC129">
+                  <SHORT-NAME>SecRwRtStOccupyChk</SHORT-NAME>
+                  <PORTS>
+                    <P-PORT-PROTOTYPE UUID="07879229-06CE-4E1D-B643-C3D494FDFB51">
+                      <SHORT-NAME>R2RMdSeatOccupied</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <NONQUEUED-SENDER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdSeatOccupied/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-SENDER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdSeatOccupied</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="D5D76FA7-CA7B-4855-8759-BE8B37898074">
+                      <SHORT-NAME>SecRwRtStOccupyChk</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <SERVER-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/SecRwRtStOccupyChk/Cal</OPERATION-REF>
+                          <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                        </SERVER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/SecRwRtStOccupyChk</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="732E2F35-5CCB-4212-9965-B1333E0BE629">
+                      <SHORT-NAME>IfVeSMSeNotSecRowRtSeaOccStat</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/Interfaces/IfVeSMSeNotSecRowRtSeaOccStat/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/Interfaces/IfVeSMSeNotSecRowRtSeaOccStat</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                  </PORTS>
+                  <INTERNAL-BEHAVIORS>
+                    <SWC-INTERNAL-BEHAVIOR UUID="ADA895EC-61EB-4223-B54D-BA121803704B">
+                      <SHORT-NAME>SecRwRtStOccupyChk_InternalBehavior</SHORT-NAME>
+                      <EVENTS>
+                        <OPERATION-INVOKED-EVENT UUID="69A852D0-A9BC-49FC-B4DF-863098353478">
+                          <SHORT-NAME>OIT_SecRwRtStOccupyChk_Cal_SecRwRtStOccupyChk_Cal</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/PATAC/MSM/ComponentTypes/SecRwRtStOccupyChk/SecRwRtStOccupyChk_InternalBehavior/SecRwRtStOccupyChk_Cal</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/SecRwRtStOccupyChk/SecRwRtStOccupyChk</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/SecRwRtStOccupyChk/Cal</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                      </EVENTS>
+                      <RUNNABLES>
+                        <RUNNABLE-ENTITY UUID="1079FEEB-66B4-4721-AB30-E69EF73338BD">
+                          <SHORT-NAME>SecRwRtStOccupyChk_Cal</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                          <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_IfVeSMSeNotSecRowRtSeaOccStat_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/SecRwRtStOccupyChk/IfVeSMSeNotSecRowRtSeaOccStat</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/Interfaces/IfVeSMSeNotSecRowRtSeaOccStat/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                          </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                          <DATA-SEND-POINTS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>SEND_R2RMdSeatOccupied_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/SecRwRtStOccupyChk/R2RMdSeatOccupied</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdSeatOccupied/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                          </DATA-SEND-POINTS>
+                          <SYMBOL>SecRwRtStOccupyChk_Cal</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                      </RUNNABLES>
+                      <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                    </SWC-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </APPLICATION-SW-COMPONENT-TYPE>
+                <SWC-IMPLEMENTATION UUID="03A7606D-6767-4317-A946-0BA781E73221">
+                  <SHORT-NAME>SecRwRtStOccupyChk_Implementation</SHORT-NAME>
+                  <CODE-DESCRIPTORS>
+                    <CODE>
+                      <SHORT-NAME>Default</SHORT-NAME>
+                      <ARTIFACT-DESCRIPTORS>
+                        <AUTOSAR-ENGINEERING-OBJECT>
+                          <SHORT-LABEL>Default</SHORT-LABEL>
+                          <CATEGORY>SWSRC</CATEGORY>
+                        </AUTOSAR-ENGINEERING-OBJECT>
+                      </ARTIFACT-DESCRIPTORS>
+                    </CODE>
+                  </CODE-DESCRIPTORS>
+                  <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/PATAC/MSM/ComponentTypes/SecRwRtStOccupyChk/SecRwRtStOccupyChk_InternalBehavior</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ModeAdjust</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                  <ELEMENTS>
+                    <COMPU-METHOD UUID="D9A46111-B7E1-4C73-9E74-BF63B0CA7950">
+                      <SHORT-NAME>SeatOccupiedSts</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>SeatOccupiedSts_Unknown</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>SeatOccupiedSts_Empty</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>SeatOccupiedSts_Occupied</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>SeatOccupiedSts_DataNotAvailable</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">3</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataType</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE UUID="12122FA7-BC66-4883-BA4E-B620200C4913">
+                      <SHORT-NAME>SeatOccupiedSts1</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <BASE-TYPE-REF DEST="SW-BASE-TYPE">/PATAC/Facility/DataTypes/BaseTypes/UInt8</BASE-TYPE-REF>
+                            <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                            <COMPU-METHOD-REF DEST="COMPU-METHOD">/PATAC/MSM/ModeAdjust/CompuMethods/SeatOccupiedSts</COMPU-METHOD-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Interfaces</SHORT-NAME>
+                  <ELEMENTS>
+                    <SENDER-RECEIVER-INTERFACE UUID="C4FEEBED-8F27-4EF9-8184-BF344D1F90BD">
+                      <SHORT-NAME>IfVeSMSeNotSecRowRtSeaOccStat</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="BD9E12EF-1E4D-4008-B6AA-B5042B036B3D">
+                          <SHORT-NAME>Val</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/MSM/ModeAdjust/DataType/SeatOccupiedSts1</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                      <INVALIDATION-POLICYS>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/Interfaces/IfVeSMSeNotSecRowRtSeaOccStat/Val</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                      </INVALIDATION-POLICYS>
+                    </SENDER-RECEIVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterface</SHORT-NAME>
+                  <ELEMENTS>
+                    <CLIENT-SERVER-INTERFACE UUID="8D57BB76-E7D9-498F-96EC-7DDEE7CEB221">
+                      <SHORT-NAME>SecRwRtStOccupyChk</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="F67ABDCF-44D5-450A-A3CE-67E74A9C0292">
+                          <SHORT-NAME>Cal</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE UUID="3A87615B-F3C4-45C6-8D09-B8F99E11D608">
+                      <SHORT-NAME>MdSeatOccupied</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="A8CBB656-5E6B-4CDA-BA81-8627F25D6B79">
+                          <SHORT-NAME>Val</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                      <INVALIDATION-POLICYS>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdSeatOccupied/Val</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                      </INVALIDATION-POLICYS>
+                    </SENDER-RECEIVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

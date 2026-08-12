@@ -1,0 +1,1026 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file was saved with a tool from Vector Informatik GmbH
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Platform</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataConstrs</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-CONSTR UUID="A78E1580-8841-4232-93AE-75B271460480">
+              <SHORT-NAME>DC_Boolean</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>PATAC</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Facility</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>BaseTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <SW-BASE-TYPE UUID="29FE9DBF-4857-4BD2-A87E-3031ADD9FDAA">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>BOOLEAN</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>unsigned char</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                    <SW-BASE-TYPE UUID="65F69843-0F89-40A7-B973-7E7DE7A42907">
+                      <SHORT-NAME>UInt32</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>32</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>unsigned long</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Implementation</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE UUID="5BE5B84C-402D-4D24-9A4B-D6526FE78341">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <BASE-TYPE-REF DEST="SW-BASE-TYPE">/PATAC/Facility/DataTypes/BaseTypes/Boolean</BASE-TYPE-REF>
+                            <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/DC_Boolean</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                    <IMPLEMENTATION-DATA-TYPE UUID="82719AE7-BB29-4F9F-83B1-4530BB0E85F5">
+                      <SHORT-NAME>UInt32</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <BASE-TYPE-REF DEST="SW-BASE-TYPE">/PATAC/Facility/DataTypes/BaseTypes/UInt32</BASE-TYPE-REF>
+                            <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>MSM</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+              <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE UUID="45AF45E5-11EA-4D98-AF46-3F8F80317BF4">
+                  <SHORT-NAME>MdEnChk4s</SHORT-NAME>
+                  <PORTS>
+                    <P-PORT-PROTOTYPE UUID="629F201F-13B1-4AC1-9A1A-199FC0906CDD">
+                      <SHORT-NAME>MdEnChk4s</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <SERVER-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/MdEnChk4s/Cal</OPERATION-REF>
+                          <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                        </SERVER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdEnChk4s</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="DFED8754-7DD2-4A1A-9910-9489B069701B">
+                      <SHORT-NAME>EZE4sLtMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="3C12A313-0394-47E7-8D77-E707F7533FBF">
+                      <SHORT-NAME>EZE4sRtMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="7A18DF3C-DBB0-4AAC-8735-D57EBC39DEED">
+                      <SHORT-NAME>EZQ4sLtMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="FA5B2E16-0ED3-4C19-9EA1-C82E21B9FDE3">
+                      <SHORT-NAME>EZQ4sRtMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="CE96083F-2117-4B72-B3ED-CED39453FE34">
+                      <SHORT-NAME>LfLyMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="712811AB-1BCC-474E-B22A-3097B7D968D8">
+                      <SHORT-NAME>LgrstCloseLtMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="51FB4D1C-8EB4-4AFE-9F9F-175FFD30A94F">
+                      <SHORT-NAME>LgrstCloseRtMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="053BED87-62C9-48FE-B270-FF6B8EA8FD90">
+                      <SHORT-NAME>LgrstOpenLtMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="FC212D36-E2DE-41DB-8276-8861D32D78C1">
+                      <SHORT-NAME>LgrstOpenRtMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="1E6EF981-33D7-4C25-A51E-8660D8836AA6">
+                      <SHORT-NAME>LtRcvyMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="711DC913-8E26-4A60-A7A8-7BEED1D54738">
+                      <SHORT-NAME>LtVipMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="92679599-6AF2-49EA-AC35-640A3A9D518C">
+                      <SHORT-NAME>MdEnChk_MdXX</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <CLIENT-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/MdEnChk_MdXX/Cal</OPERATION-REF>
+                        </CLIENT-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdEnChk_MdXX</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="D3D7EE83-1DDA-4F38-A6AA-6A1D0414A691">
+                      <SHORT-NAME>RtLyMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="6AAD1611-75E0-423D-A1F8-9BBD43B89CF3">
+                      <SHORT-NAME>RtRcvyMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="271886EC-F7FD-42B0-B84E-42D466CD688D">
+                      <SHORT-NAME>RtVipMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="1A88F8D6-4842-4E83-BCF9-883A7FF309AF">
+                      <SHORT-NAME>StNumFlg</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is4s</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s7s</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is7s</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="2F3E59DB-63E2-48DE-95AC-3968A1FD3979">
+                      <SHORT-NAME>WelcomeBkwdMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="60D463ED-9EC7-4E59-A5DD-D7BC0CEC9E64">
+                      <SHORT-NAME>WelcomeFwdMdReq</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                  </PORTS>
+                  <INTERNAL-BEHAVIORS>
+                    <SWC-INTERNAL-BEHAVIOR UUID="D02EA198-E778-47DC-9540-D9166DD8938E">
+                      <SHORT-NAME>MdEnChk4s_InternalBehavior</SHORT-NAME>
+                      <EVENTS>
+                        <OPERATION-INVOKED-EVENT UUID="7AA8BFED-7078-4733-A729-50467BAB23F5">
+                          <SHORT-NAME>OIT_MdEnChk4s_Cal_MdEnChk4s_Cal</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/PATAC/MSM/ComponentTypes/MdEnChk4s/MdEnChk4s_InternalBehavior/MdEnChk4s_Cal</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/MdEnChk4s</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/MdEnChk4s/Cal</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                      </EVENTS>
+                      <RUNNABLES>
+                        <RUNNABLE-ENTITY UUID="750D2DB7-15F3-4EEB-AD6D-E73E1DECBCF6">
+                          <SHORT-NAME>MdEnChk4s_Cal</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                          <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_EZE4sLtMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/EZE4sLtMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_EZE4sRtMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/EZE4sRtMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_EZQ4sLtMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/EZQ4sLtMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_EZQ4sRtMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/EZQ4sRtMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_LfLyMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/LfLyMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_LgrstCloseLtMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/LgrstCloseLtMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_LgrstCloseRtMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/LgrstCloseRtMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_LgrstOpenLtMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/LgrstOpenLtMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_LgrstOpenRtMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/LgrstOpenRtMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_LtRcvyMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/LtRcvyMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_LtVipMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/LtVipMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_RtLyMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/RtLyMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_RtRcvyMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/RtRcvyMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_RtVipMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/RtVipMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_StNumFlg_Is4s</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/StNumFlg</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is4s</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_StNumFlg_Is6s</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/StNumFlg</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_StNumFlg_Is6s7s</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/StNumFlg</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s7s</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_StNumFlg_Is7s</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/StNumFlg</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is7s</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_WelcomeBkwdMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/WelcomeBkwdMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_WelcomeFwdMdReq_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/WelcomeFwdMdReq</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                          </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                          <SERVER-CALL-POINTS>
+                            <SYNCHRONOUS-SERVER-CALL-POINT>
+                              <SHORT-NAME>SC_MdEnChk_MdXX_Cal</SHORT-NAME>
+                              <OPERATION-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/MdEnChk4s/MdEnChk_MdXX</CONTEXT-R-PORT-REF>
+                                <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/MdEnChk_MdXX/Cal</TARGET-REQUIRED-OPERATION-REF>
+                              </OPERATION-IREF>
+                              <TIMEOUT>0</TIMEOUT>
+                            </SYNCHRONOUS-SERVER-CALL-POINT>
+                          </SERVER-CALL-POINTS>
+                          <SYMBOL>MdEnChk4s_Cal</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                      </RUNNABLES>
+                      <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                    </SWC-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </APPLICATION-SW-COMPONENT-TYPE>
+                <SWC-IMPLEMENTATION UUID="5BF0EA1F-69AB-4807-8B45-15F97AE3130E">
+                  <SHORT-NAME>MdEnChk4s_Implementation</SHORT-NAME>
+                  <CODE-DESCRIPTORS>
+                    <CODE>
+                      <SHORT-NAME>Default</SHORT-NAME>
+                      <ARTIFACT-DESCRIPTORS>
+                        <AUTOSAR-ENGINEERING-OBJECT>
+                          <SHORT-LABEL>Default</SHORT-LABEL>
+                          <CATEGORY>SWSRC</CATEGORY>
+                        </AUTOSAR-ENGINEERING-OBJECT>
+                      </ARTIFACT-DESCRIPTORS>
+                    </CODE>
+                  </CODE-DESCRIPTORS>
+                  <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/PATAC/MSM/ComponentTypes/MdEnChk4s/MdEnChk4s_InternalBehavior</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ModeAdjust</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterface</SHORT-NAME>
+                  <ELEMENTS>
+                    <CLIENT-SERVER-INTERFACE UUID="9586C276-B812-464A-A9D3-7955093E21F6">
+                      <SHORT-NAME>MdEnChk_MdXX</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="BC521A9F-7A30-4E27-912E-B1F44789B8CB">
+                          <SHORT-NAME>Cal</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">StNun: 
+0 :4s
+1:6s
+2:7s
+3:4sp</L-2>
+                          </DESC>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="C58B411A-F137-4535-8716-7A7F46BCC62A">
+                              <SHORT-NAME>Req</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/NmCoorr/Facility/DataTypes/Boolean</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="7CB02511-2CE4-41A2-A2D7-077D2CA88028">
+                              <SHORT-NAME>ChkBsyBit</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt32</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="62758DF4-EA65-4581-8FD9-B9F71A98BB8A">
+                              <SHORT-NAME>SetEnBit</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt32</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="E2396A81-0442-4178-AE94-64AAC53F948E">
+                              <SHORT-NAME>SetBsyBit</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt32</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="2C539AAE-B08D-4D6B-A2B8-A4FA6882CC71">
+                              <SHORT-NAME>MdAvl</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/NmCoorr/Facility/DataTypes/Boolean</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <CLIENT-SERVER-INTERFACE UUID="AB5E17BB-3683-4279-94DF-57838242B85F">
+                      <SHORT-NAME>MdEnChk4s</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="4C8A3DE5-7ED8-4FDF-9190-02F90F28F9AE">
+                          <SHORT-NAME>Cal</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE UUID="D826974A-3421-41B2-A6E4-AFA5C0AC456A">
+                      <SHORT-NAME>AnyModeAjust</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="D61B9C4A-C7D8-42AA-A061-CE28EC691F90">
+                          <SHORT-NAME>Val</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                      <INVALIDATION-POLICYS>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/AnyModeAjust/Val</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                      </INVALIDATION-POLICYS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE UUID="9E5333A7-0A65-4A5F-82C3-ED98964E5DEE">
+                      <SHORT-NAME>MdReq</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="B198941E-669A-4202-BD7A-ACA55A3AEA2D">
+                          <SHORT-NAME>Val</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                      <INVALIDATION-POLICYS>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/MdReq/Val</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                      </INVALIDATION-POLICYS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE UUID="EB1A9BAF-51A1-4E16-87A0-88CC79004CBE">
+                      <SHORT-NAME>StNumFlg</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="8E54DEB9-5F5D-4DF6-BFD3-9AEF69F60BB0">
+                          <SHORT-NAME>Is4s</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="3C528E56-6C5E-4AAD-9733-DDFEAE661C8B">
+                          <SHORT-NAME>Is6s</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="B3887488-E28F-45F2-81E3-0F82219F62B0">
+                          <SHORT-NAME>Is6s7s</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="95019411-BE8E-46A1-A956-838969D57590">
+                          <SHORT-NAME>Is7s</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                      <INVALIDATION-POLICYS>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is7s</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is4s</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s7s</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                      </INVALIDATION-POLICYS>
+                    </SENDER-RECEIVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>NmCoorr</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Facility</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE UUID="8A858AD1-DC94-443C-A4E5-0C1ADC9872AA">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <BASE-TYPE-REF DEST="SW-BASE-TYPE">/PATAC/NmCoorr/Facility/DataTypes/BaseTypes/Boolean</BASE-TYPE-REF>
+                            <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                  <AR-PACKAGES>
+                    <AR-PACKAGE>
+                      <SHORT-NAME>BaseTypes</SHORT-NAME>
+                      <ELEMENTS>
+                        <SW-BASE-TYPE UUID="AA2AE36C-4692-4D11-BA3D-E8A6596774D0">
+                          <SHORT-NAME>Boolean</SHORT-NAME>
+                          <CATEGORY>FIXED_LENGTH</CATEGORY>
+                          <BASE-TYPE-SIZE>1</BASE-TYPE-SIZE>
+                          <BASE-TYPE-ENCODING>BOOLEAN</BASE-TYPE-ENCODING>
+                          <NATIVE-DECLARATION>boolean</NATIVE-DECLARATION>
+                        </SW-BASE-TYPE>
+                      </ELEMENTS>
+                    </AR-PACKAGE>
+                  </AR-PACKAGES>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

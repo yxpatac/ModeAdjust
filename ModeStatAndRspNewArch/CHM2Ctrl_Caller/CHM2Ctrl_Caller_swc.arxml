@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file was saved with a tool from Vector Informatik GmbH
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Platform</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataConstrs</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-CONSTR UUID="A78E1580-8841-4232-93AE-75B271460480">
+              <SHORT-NAME>DC_Boolean</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>PATAC</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Facility</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>BaseTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <SW-BASE-TYPE UUID="29FE9DBF-4857-4BD2-A87E-3031ADD9FDAA">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>BOOLEAN</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>unsigned char</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Implementation</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE UUID="5BE5B84C-402D-4D24-9A4B-D6526FE78341">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <BASE-TYPE-REF DEST="SW-BASE-TYPE">/PATAC/Facility/DataTypes/BaseTypes/Boolean</BASE-TYPE-REF>
+                            <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/DC_Boolean</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>MSM</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+              <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE UUID="B45BDC69-4A82-4F87-AFCD-F6CAA5BAC79F">
+                  <SHORT-NAME>CHM2Ctrl_Caller</SHORT-NAME>
+                  <PORTS>
+                    <P-PORT-PROTOTYPE UUID="C6AB91C9-F0FD-4E3D-AB86-14C22A87EA48">
+                      <SHORT-NAME>CHM2Ctrl</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <SERVER-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/CHM2Ctrl/Cal</OPERATION-REF>
+                          <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                        </SERVER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/CHM2Ctrl</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="854BF167-8DFE-4929-B740-902951D7DDF8">
+                      <SHORT-NAME>CHM2ActiveReqChk</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <CLIENT-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/CHM2ActiveReqChk/Cal</OPERATION-REF>
+                        </CLIENT-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/CHM2ActiveReqChk</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="0BC017E2-DBE0-4B87-A1D8-6BD6F807970D">
+                      <SHORT-NAME>CHM2ActiveSubStateCtrl</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <CLIENT-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/CHM2ActiveSubStateCtrl/Cal</OPERATION-REF>
+                        </CLIENT-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/CHM2ActiveSubStateCtrl</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="35C6D850-B9A5-4BAD-BF40-70D3914E0606">
+                      <SHORT-NAME>CHM2StateCtrl</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <CLIENT-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/CHM2StateCtrl/Cal</OPERATION-REF>
+                        </CLIENT-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/CHM2StateCtrl</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="9E8557ED-A014-44BA-851F-E62C6B4B6611">
+                      <SHORT-NAME>KeSMSbMdChime2Enable</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/MdChime2Enable/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/MdChime2Enable</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                  </PORTS>
+                  <INTERNAL-BEHAVIORS>
+                    <SWC-INTERNAL-BEHAVIOR UUID="5358EBF9-46D6-416E-B3DD-E74AE3209A6B">
+                      <SHORT-NAME>CHM2Ctrl_Caller_InternalBehavior</SHORT-NAME>
+                      <EVENTS>
+                        <OPERATION-INVOKED-EVENT UUID="2EB44E58-17DC-40FA-B2FD-645038EA66E9">
+                          <SHORT-NAME>OIT_CHM2Ctrl_Cal_CHM2Ctrl_Cal</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/PATAC/MSM/ComponentTypes/CHM2Ctrl_Caller/CHM2Ctrl_Caller_InternalBehavior/CHM2Ctrl_Cal</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/CHM2Ctrl_Caller/CHM2Ctrl</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/CHM2Ctrl/Cal</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                      </EVENTS>
+                      <RUNNABLES>
+                        <RUNNABLE-ENTITY UUID="8E1DF830-FCBB-403F-A56A-44FD266C2ED7">
+                          <SHORT-NAME>CHM2Ctrl_Cal</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                          <PARAMETER-ACCESSS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSbMdChime2Enable_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/CHM2Ctrl_Caller/KeSMSbMdChime2Enable</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/MdChime2Enable/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                          </PARAMETER-ACCESSS>
+                          <SERVER-CALL-POINTS>
+                            <SYNCHRONOUS-SERVER-CALL-POINT>
+                              <SHORT-NAME>SC_CHM2ActiveReqChk_Cal</SHORT-NAME>
+                              <OPERATION-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/CHM2Ctrl_Caller/CHM2ActiveReqChk</CONTEXT-R-PORT-REF>
+                                <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/CHM2ActiveReqChk/Cal</TARGET-REQUIRED-OPERATION-REF>
+                              </OPERATION-IREF>
+                              <TIMEOUT>0</TIMEOUT>
+                            </SYNCHRONOUS-SERVER-CALL-POINT>
+                            <SYNCHRONOUS-SERVER-CALL-POINT>
+                              <SHORT-NAME>SC_CHM2ActiveSubStateCtrl_Cal</SHORT-NAME>
+                              <OPERATION-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/CHM2Ctrl_Caller/CHM2ActiveSubStateCtrl</CONTEXT-R-PORT-REF>
+                                <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/CHM2ActiveSubStateCtrl/Cal</TARGET-REQUIRED-OPERATION-REF>
+                              </OPERATION-IREF>
+                              <TIMEOUT>0</TIMEOUT>
+                            </SYNCHRONOUS-SERVER-CALL-POINT>
+                            <SYNCHRONOUS-SERVER-CALL-POINT>
+                              <SHORT-NAME>SC_CHM2StateCtrl_Cal</SHORT-NAME>
+                              <OPERATION-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/CHM2Ctrl_Caller/CHM2StateCtrl</CONTEXT-R-PORT-REF>
+                                <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/CHM2StateCtrl/Cal</TARGET-REQUIRED-OPERATION-REF>
+                              </OPERATION-IREF>
+                              <TIMEOUT>0</TIMEOUT>
+                            </SYNCHRONOUS-SERVER-CALL-POINT>
+                          </SERVER-CALL-POINTS>
+                          <SYMBOL>CHM2Ctrl_Cal</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                      </RUNNABLES>
+                      <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                    </SWC-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </APPLICATION-SW-COMPONENT-TYPE>
+                <SWC-IMPLEMENTATION UUID="CA2017DA-781C-412D-8070-303D91725F5C">
+                  <SHORT-NAME>CHM2Ctrl_Caller_Implementation</SHORT-NAME>
+                  <CODE-DESCRIPTORS>
+                    <CODE>
+                      <SHORT-NAME>Default</SHORT-NAME>
+                      <ARTIFACT-DESCRIPTORS>
+                        <AUTOSAR-ENGINEERING-OBJECT>
+                          <SHORT-LABEL>Default</SHORT-LABEL>
+                          <CATEGORY>SWSRC</CATEGORY>
+                        </AUTOSAR-ENGINEERING-OBJECT>
+                      </ARTIFACT-DESCRIPTORS>
+                    </CODE>
+                  </CODE-DESCRIPTORS>
+                  <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/PATAC/MSM/ComponentTypes/CHM2Ctrl_Caller/CHM2Ctrl_Caller_InternalBehavior</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ModeAdjust</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CalPortInterface</SHORT-NAME>
+                  <ELEMENTS>
+                    <PARAMETER-INTERFACE UUID="E2880902-C24D-4F0D-BCF1-028DE855B8D8">
+                      <SHORT-NAME>MdChime2Enable</SHORT-NAME>
+                      <PARAMETERS>
+                        <PARAMETER-DATA-PROTOTYPE UUID="9A8DDC03-2DE5-4B3B-B83F-C04521AF8E68">
+                          <SHORT-NAME>Val</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </PARAMETER-DATA-PROTOTYPE>
+                      </PARAMETERS>
+                    </PARAMETER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterface</SHORT-NAME>
+                  <ELEMENTS>
+                    <CLIENT-SERVER-INTERFACE UUID="9BF2B460-D3EB-40CD-8C01-892CCAC46609">
+                      <SHORT-NAME>CHM2ActiveReqChk</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="E4C3899A-A799-45D8-B0DE-9ACC68925A23">
+                          <SHORT-NAME>Cal</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <CLIENT-SERVER-INTERFACE UUID="0E1E7371-F46B-4D2D-8BBB-752365D8295B">
+                      <SHORT-NAME>CHM2ActiveSubStateCtrl</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="096A0B6F-5332-4D96-AB24-4576AF1FF1AE">
+                          <SHORT-NAME>Cal</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <CLIENT-SERVER-INTERFACE UUID="7021FAC0-46BD-4EA6-AD73-B3000751BEA7">
+                      <SHORT-NAME>CHM2Ctrl</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="5048AAD2-E1E7-4153-B87D-5EAA1D161412">
+                          <SHORT-NAME>Cal</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <CLIENT-SERVER-INTERFACE UUID="192B66F6-8B67-4612-8DC7-924E3C714CEB">
+                      <SHORT-NAME>CHM2StateCtrl</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="A6D3B53F-9508-4AA0-BE52-43112AC5BFB3">
+                          <SHORT-NAME>Cal</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

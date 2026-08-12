@@ -1,0 +1,2043 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file was saved with a tool from Vector Informatik GmbH
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Platform</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataConstrs</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-CONSTR UUID="A78E1580-8841-4232-93AE-75B271460480">
+              <SHORT-NAME>DC_Boolean</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+            <DATA-CONSTR UUID="b08c0d55-1bea-5932-68da-dc752ba00698">
+              <SHORT-NAME>DC_UInt16</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>PATAC</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Facility</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>BaseTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <SW-BASE-TYPE UUID="29FE9DBF-4857-4BD2-A87E-3031ADD9FDAA">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>BOOLEAN</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>unsigned char</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                    <SW-BASE-TYPE UUID="7C063F1B-D319-4A6D-8AEF-0F87515A676A">
+                      <SHORT-NAME>UInt16</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>16</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>unsigned short</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Implementation</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE UUID="5BE5B84C-402D-4D24-9A4B-D6526FE78341">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <BASE-TYPE-REF DEST="SW-BASE-TYPE">/PATAC/Facility/DataTypes/BaseTypes/Boolean</BASE-TYPE-REF>
+                            <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/DC_Boolean</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                    <IMPLEMENTATION-DATA-TYPE UUID="642D260C-97CB-42EB-AD0F-8A952B15359F">
+                      <SHORT-NAME>UInt16</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <BASE-TYPE-REF DEST="SW-BASE-TYPE">/PATAC/Facility/DataTypes/BaseTypes/UInt16</BASE-TYPE-REF>
+                            <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                            <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/DC_UInt16</DATA-CONSTR-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>MSM</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+              <ELEMENTS>
+                <APPLICATION-SW-COMPONENT-TYPE UUID="BB515EBD-3CFD-4865-AF58-317411D24678">
+                  <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPosSelc</SHORT-NAME>
+                  <PORTS>
+                    <P-PORT-PROTOTYPE UUID="9362D1EA-D94C-40D1-AC66-44665090AF50">
+                      <SHORT-NAME>EZER3LFwdBkwdTrgtPosCalib</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <NONQUEUED-SENDER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <INIT-VALUE>
+                            <ARRAY-VALUE-SPECIFICATION>
+                              <ELEMENTS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </ELEMENTS>
+                            </ARRAY-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-SENDER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="43A87F5A-BC3D-494A-8695-0F8F492FD721">
+                      <SHORT-NAME>FAMLYLR3LFwdBkwdTrgtPosCalib</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <NONQUEUED-SENDER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <INIT-VALUE>
+                            <ARRAY-VALUE-SPECIFICATION>
+                              <ELEMENTS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </ELEMENTS>
+                            </ARRAY-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-SENDER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="D2ACF523-4C49-4667-B541-108A5B3C72F3">
+                      <SHORT-NAME>FAMLYRR3LFwdBkwdTrgtPosCalib</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <NONQUEUED-SENDER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <INIT-VALUE>
+                            <ARRAY-VALUE-SPECIFICATION>
+                              <ELEMENTS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </ELEMENTS>
+                            </ARRAY-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-SENDER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="753432B4-7A18-4A2B-A29E-AEFA4D1561B6">
+                      <SHORT-NAME>LugLR3LFwdBkwdTrgtPosCalib</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <NONQUEUED-SENDER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <INIT-VALUE>
+                            <ARRAY-VALUE-SPECIFICATION>
+                              <ELEMENTS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </ELEMENTS>
+                            </ARRAY-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-SENDER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="ADBC175C-5525-4FB6-BB06-FDF1802C4E04">
+                      <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPosSelc</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <SERVER-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/ThdRwLtStFwdBkwdTrgtPosSelc/Cal</OPERATION-REF>
+                          <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                        </SERVER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/ThdRwLtStFwdBkwdTrgtPosSelc</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="5323B858-9202-406A-B73C-E7578ABAE018">
+                      <SHORT-NAME>VIPLExitR3LFwdBkwdTrgtPosCalib</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <NONQUEUED-SENDER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <INIT-VALUE>
+                            <ARRAY-VALUE-SPECIFICATION>
+                              <ELEMENTS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </ELEMENTS>
+                            </ARRAY-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-SENDER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="0C9E51C3-5757-4A69-879B-86C63F0DCFF6">
+                      <SHORT-NAME>VIPR3LFwdBkwdTrgtPosCalib</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <NONQUEUED-SENDER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <INIT-VALUE>
+                            <ARRAY-VALUE-SPECIFICATION>
+                              <ELEMENTS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </ELEMENTS>
+                            </ARRAY-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-SENDER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE UUID="26F6F860-58DD-4050-9BC4-0EEE002F4F67">
+                      <SHORT-NAME>VIPRExitR3LFwdBkwdTrgtPosCalib</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <NONQUEUED-SENDER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <INIT-VALUE>
+                            <ARRAY-VALUE-SPECIFICATION>
+                              <ELEMENTS>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                                <NUMERICAL-VALUE-SPECIFICATION>
+                                  <VALUE>4095</VALUE>
+                                </NUMERICAL-VALUE-SPECIFICATION>
+                              </ELEMENTS>
+                            </ARRAY-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-SENDER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="6C0BE903-F326-4AE5-94E9-A4E9C576B985">
+                      <SHORT-NAME>IfVeSMSuThdRwLtStCshnFldUpwdDnwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/Interfaces/IfVeSMSuThdRwLtStCshnFldUpwdDnwdPos/Val</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/Interfaces/IfVeSMSuThdRwLtStCshnFldUpwdDnwdPos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="B12F5B47-1D65-4019-BB49-07B2B802A4D0">
+                      <SHORT-NAME>KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>2760</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="C6869808-13BE-4B0A-A3C3-6411DB400119">
+                      <SHORT-NAME>KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>4000</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="ED44394E-4C63-496E-AC46-6BC9F86C8C29">
+                      <SHORT-NAME>KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>2760</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="89E33509-5018-4258-982A-01F4B1223411">
+                      <SHORT-NAME>KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="CA99B94C-C725-4A2B-88D2-0A61711C2224">
+                      <SHORT-NAME>KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="A92E9EB6-C07C-4342-B83E-2F1665DEE2CC">
+                      <SHORT-NAME>KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="AADF984C-C4D9-4DFE-90A8-DF56550587BB">
+                      <SHORT-NAME>KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="854D78DD-D0BB-41DE-8CF0-E09F52A5DF64">
+                      <SHORT-NAME>KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="8DBA4879-2D86-466A-A1E7-AEC3B92420CB">
+                      <SHORT-NAME>KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="61933DF9-9052-499F-BB52-70EC6B40C84D">
+                      <SHORT-NAME>KeSMSw6sLugThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>30</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="06AD6838-CD1D-42C5-B2DA-6CEFD7AAC5E2">
+                      <SHORT-NAME>KeSMSw6sLugThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>40</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="BF26A35B-35F9-441B-B33F-6C526F0FA427">
+                      <SHORT-NAME>KeSMSw6sLugThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>20</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="58FBC012-D585-4493-B038-3B88B7CFCA94">
+                      <SHORT-NAME>KeSMSw6sVIPThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>4000</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="5E1D6B05-FBAB-47DD-BAA6-55652E1846A5">
+                      <SHORT-NAME>KeSMSw6sVIPThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>4000</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="86992533-A63D-44B7-B0C9-04D87B961CDC">
+                      <SHORT-NAME>KeSMSw6sVIPThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>4000</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="E3348F9E-5B3F-4A7B-B701-8437B78AB30E">
+                      <SHORT-NAME>KeSMSwAcsEntryThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>2760</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="7A850555-68D8-411D-B5E0-1C5D62E8713A">
+                      <SHORT-NAME>KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>4000</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="AC606700-A993-4772-87F7-4130744AFDF3">
+                      <SHORT-NAME>KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>2760</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="F29EFDB4-5D37-4274-A05F-2E8EF9DA7E56">
+                      <SHORT-NAME>KeSMSwFamilyLMdThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="169F2A7D-229A-45A4-B013-C19369CAF9A6">
+                      <SHORT-NAME>KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="EF4E10B8-4A52-437D-9E59-306DFB6FE3B5">
+                      <SHORT-NAME>KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="3E4A6605-FF60-4060-B421-66BAAA90D683">
+                      <SHORT-NAME>KeSMSwFamilyMdThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="FEDE9127-E267-4F41-8D08-6BA5E3AA1ADC">
+                      <SHORT-NAME>KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="627244F5-3A78-418E-AD23-E70624C802B8">
+                      <SHORT-NAME>KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="624BE969-E6F5-4538-92DD-F5A29FEBC71F">
+                      <SHORT-NAME>KeSMSwLugThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>30</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="65B24A87-2CB5-46BA-B3C2-2D7CCA08A8D0">
+                      <SHORT-NAME>KeSMSwLugThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>40</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="374C731A-CFC7-470E-A727-F9B4FD56CD74">
+                      <SHORT-NAME>KeSMSwLugThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>20</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="7A558CB2-14D2-4113-BDA9-DCEFB1C86A8D">
+                      <SHORT-NAME>KeSMSwVIPThdRwLtStFrwdBkwdPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>4000</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="8196F0B5-8DC7-4C2A-A696-C339F6234CB2">
+                      <SHORT-NAME>KeSMSwVIPThdRwLtStFrwdBkwdPosMax</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>4000</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="989C2042-A630-4A2E-B527-BA9FBC08F7F7">
+                      <SHORT-NAME>KeSMSwVIPThdRwLtStFrwdBkwdPosMin</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <PARAMETER-REQUIRE-COM-SPEC>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>4000</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                          <PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</PARAMETER-REF>
+                        </PARAMETER-REQUIRE-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="D200A972-585A-4B38-B503-39730FA1CD42">
+                      <SHORT-NAME>StNumFlg</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is4s</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s7s</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                        <NONQUEUED-RECEIVER-COM-SPEC>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is7s</DATA-ELEMENT-REF>
+                          <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                          <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                          <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                          <FILTER>
+                            <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                          </FILTER>
+                          <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                          <INIT-VALUE>
+                            <NUMERICAL-VALUE-SPECIFICATION>
+                              <VALUE>0</VALUE>
+                            </NUMERICAL-VALUE-SPECIFICATION>
+                          </INIT-VALUE>
+                        </NONQUEUED-RECEIVER-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="11CA3886-1486-4E54-9E5D-E0EA5A370805">
+                      <SHORT-NAME>VIPLExit557TrgtPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <CLIENT-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/VIPLExit557TrgtPos/Get</OPERATION-REF>
+                        </CLIENT-COM-SPEC>
+                        <CLIENT-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/VIPLExit557TrgtPos/Set</OPERATION-REF>
+                        </CLIENT-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/VIPLExit557TrgtPos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE UUID="719CD6D1-59D5-47C8-8E96-71713610C275">
+                      <SHORT-NAME>VIPRExit557TrgtPos</SHORT-NAME>
+                      <REQUIRED-COM-SPECS>
+                        <CLIENT-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/VIPRExit557TrgtPos/Get</OPERATION-REF>
+                        </CLIENT-COM-SPEC>
+                        <CLIENT-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/VIPRExit557TrgtPos/Set</OPERATION-REF>
+                        </CLIENT-COM-SPEC>
+                      </REQUIRED-COM-SPECS>
+                      <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/PATAC/MSM/ModeAdjust/PortInterface/VIPRExit557TrgtPos</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                  </PORTS>
+                  <INTERNAL-BEHAVIORS>
+                    <SWC-INTERNAL-BEHAVIOR UUID="B0139936-304B-49DF-9F92-76FFED5981B1">
+                      <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPosSelc_InternalBehavior</SHORT-NAME>
+                      <EVENTS>
+                        <OPERATION-INVOKED-EVENT UUID="3BCED280-F9A1-4663-A106-BC72558D13E2">
+                          <SHORT-NAME>OIT_ThdRwLtStFwdBkwdTrgtPosSelc_Cal_ThdRwLtStFwdBkwdTrgtPosSelc_Cal</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/ThdRwLtStFwdBkwdTrgtPosSelc_InternalBehavior/ThdRwLtStFwdBkwdTrgtPosSelc_Cal</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/ThdRwLtStFwdBkwdTrgtPosSelc</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/ThdRwLtStFwdBkwdTrgtPosSelc/Cal</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                        <TIMING-EVENT UUID="FF2864C2-C3B7-478A-AD14-29C547B3F92D">
+                          <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPosSelc_InitEvent</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/ThdRwLtStFwdBkwdTrgtPosSelc_InternalBehavior/ThdRwLtStFwdBkwdTrgtPosSelc_Init</START-ON-EVENT-REF>
+                          <PERIOD>0</PERIOD>
+                        </TIMING-EVENT>
+                      </EVENTS>
+                      <RUNNABLES>
+                        <RUNNABLE-ENTITY UUID="CFD2DF07-C223-4272-88B5-6FD0320E1C01">
+                          <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPosSelc_Cal</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                          <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_IfVeSMSuThdRwLtStCshnFldUpwdDnwdPos_Val</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/IfVeSMSuThdRwLtStCshnFldUpwdDnwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/Interfaces/IfVeSMSuThdRwLtStCshnFldUpwdDnwdPos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_StNumFlg_Is4s</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/StNumFlg</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is4s</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_StNumFlg_Is6s</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/StNumFlg</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_StNumFlg_Is6s7s</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/StNumFlg</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s7s</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>REC_StNumFlg_Is7s</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/StNumFlg</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is7s</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                          </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                          <DATA-SEND-POINTS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>SEND_EZER3LFwdBkwdTrgtPosCalib_TrgtPosArray</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/EZER3LFwdBkwdTrgtPosCalib</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>SEND_FAMLYLR3LFwdBkwdTrgtPosCalib_TrgtPosArray</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/FAMLYLR3LFwdBkwdTrgtPosCalib</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>SEND_FAMLYRR3LFwdBkwdTrgtPosCalib_TrgtPosArray</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/FAMLYRR3LFwdBkwdTrgtPosCalib</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>SEND_LugLR3LFwdBkwdTrgtPosCalib_TrgtPosArray</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/LugLR3LFwdBkwdTrgtPosCalib</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>SEND_VIPLExitR3LFwdBkwdTrgtPosCalib_TrgtPosArray</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/VIPLExitR3LFwdBkwdTrgtPosCalib</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>SEND_VIPR3LFwdBkwdTrgtPosCalib_TrgtPosArray</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/VIPR3LFwdBkwdTrgtPosCalib</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                            <VARIABLE-ACCESS>
+                              <SHORT-NAME>SEND_VIPRExitR3LFwdBkwdTrgtPosCalib_TrgtPosArray</SHORT-NAME>
+                              <ACCESSED-VARIABLE>
+                                <AUTOSAR-VARIABLE-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/VIPRExitR3LFwdBkwdTrgtPosCalib</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-VARIABLE-IREF>
+                              </ACCESSED-VARIABLE>
+                            </VARIABLE-ACCESS>
+                          </DATA-SEND-POINTS>
+                          <PARAMETER-ACCESSS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sLugThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sLugThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sLugThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sLugThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sLugThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sLugThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sVIPThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sVIPThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sVIPThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sVIPThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sVIPThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sVIPThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwAcsEntryThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwAcsEntryThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyLMdThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyLMdThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyMdThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyMdThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwLugThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwLugThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwLugThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwLugThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwLugThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwLugThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwVIPThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwVIPThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwVIPThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwVIPThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwVIPThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwVIPThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                          </PARAMETER-ACCESSS>
+                          <SERVER-CALL-POINTS>
+                            <SYNCHRONOUS-SERVER-CALL-POINT>
+                              <SHORT-NAME>SC_VIPLExit557TrgtPos_Get</SHORT-NAME>
+                              <OPERATION-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/VIPLExit557TrgtPos</CONTEXT-R-PORT-REF>
+                                <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/VIPLExit557TrgtPos/Get</TARGET-REQUIRED-OPERATION-REF>
+                              </OPERATION-IREF>
+                              <TIMEOUT>0</TIMEOUT>
+                            </SYNCHRONOUS-SERVER-CALL-POINT>
+                            <SYNCHRONOUS-SERVER-CALL-POINT>
+                              <SHORT-NAME>SC_VIPRExit557TrgtPos_Get</SHORT-NAME>
+                              <OPERATION-IREF>
+                                <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/VIPRExit557TrgtPos</CONTEXT-R-PORT-REF>
+                                <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/PATAC/MSM/ModeAdjust/PortInterface/VIPRExit557TrgtPos/Get</TARGET-REQUIRED-OPERATION-REF>
+                              </OPERATION-IREF>
+                              <TIMEOUT>0</TIMEOUT>
+                            </SYNCHRONOUS-SERVER-CALL-POINT>
+                          </SERVER-CALL-POINTS>
+                          <SYMBOL>ThdRwLtStFwdBkwdTrgtPosSelc_Cal</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="D7036CB2-1C9B-43CF-AAC8-FF11CECB3388">
+                          <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPosSelc_Init</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="edve:RunnableKind">
+                                <SD>InitRunnable</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                          <PARAMETER-ACCESSS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sAcsEntryThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyLMdThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sFamilyMdThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sLugThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sLugThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sLugThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sLugThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sLugThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sLugThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sVIPThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sVIPThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sVIPThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sVIPThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSw6sVIPThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSw6sVIPThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwAcsEntryThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwAcsEntryThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwAcsEntryThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyLMdThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyLMdThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyLMdThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyMdThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyMdThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwFamilyMdThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwLugThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwLugThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwLugThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwLugThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwLugThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwLugThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwVIPThdRwLtStFrwdBkwdPos_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwVIPThdRwLtStFrwdBkwdPos</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwVIPThdRwLtStFrwdBkwdPosMax_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwVIPThdRwLtStFrwdBkwdPosMax</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                            <PARAMETER-ACCESS>
+                              <SHORT-NAME>PA_KeSMSwVIPThdRwLtStFrwdBkwdPosMin_Val</SHORT-NAME>
+                              <ACCESSED-PARAMETER>
+                                <AUTOSAR-PARAMETER-IREF>
+                                  <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/KeSMSwVIPThdRwLtStFrwdBkwdPosMin</PORT-PROTOTYPE-REF>
+                                  <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/CalPortInterface/Pos/Val</TARGET-DATA-PROTOTYPE-REF>
+                                </AUTOSAR-PARAMETER-IREF>
+                              </ACCESSED-PARAMETER>
+                            </PARAMETER-ACCESS>
+                          </PARAMETER-ACCESSS>
+                          <SYMBOL>ThdRwLtStFwdBkwdTrgtPosSelc_Init</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                      </RUNNABLES>
+                      <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                    </SWC-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </APPLICATION-SW-COMPONENT-TYPE>
+                <SWC-IMPLEMENTATION UUID="C16EE1DF-22CE-46DD-BBA0-00C97FD009EE">
+                  <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPosSelc_Implementation</SHORT-NAME>
+                  <CODE-DESCRIPTORS>
+                    <CODE>
+                      <SHORT-NAME>Default</SHORT-NAME>
+                      <ARTIFACT-DESCRIPTORS>
+                        <AUTOSAR-ENGINEERING-OBJECT>
+                          <SHORT-LABEL>Default</SHORT-LABEL>
+                          <CATEGORY>SWSRC</CATEGORY>
+                        </AUTOSAR-ENGINEERING-OBJECT>
+                      </ARTIFACT-DESCRIPTORS>
+                    </CODE>
+                  </CODE-DESCRIPTORS>
+                  <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/PATAC/MSM/ComponentTypes/ThdRwLtStFwdBkwdTrgtPosSelc/ThdRwLtStFwdBkwdTrgtPosSelc_InternalBehavior</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ModeAdjust</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CalPortInterface</SHORT-NAME>
+                  <ELEMENTS>
+                    <PARAMETER-INTERFACE UUID="3871BC95-54CA-4A22-AD93-50B58687AFAB">
+                      <SHORT-NAME>Pos</SHORT-NAME>
+                      <PARAMETERS>
+                        <PARAMETER-DATA-PROTOTYPE UUID="1BE46FF7-6428-41F0-AFE3-797B25A7F09F">
+                          <SHORT-NAME>Val</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                        </PARAMETER-DATA-PROTOTYPE>
+                      </PARAMETERS>
+                    </PARAMETER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataType</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE UUID="49A012C6-B282-4A99-A27B-5EB9EDCAEAB8">
+                      <SHORT-NAME>TrgtPosCalibArray</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL">0:pos
+1:max
+2:min</L-2>
+                      </DESC>
+                      <CATEGORY>ARRAY</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <SUB-ELEMENTS>
+                        <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="40B3EAD5-1BE5-4088-A340-8B1CFF268B12">
+                          <SHORT-NAME>Element</SHORT-NAME>
+                          <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                          <ARRAY-SIZE>3</ARRAY-SIZE>
+                          <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</IMPLEMENTATION-DATA-TYPE-REF>
+                                <INVALID-VALUE>
+                                  <NUMERICAL-VALUE-SPECIFICATION>
+                                    <VALUE>0</VALUE>
+                                  </NUMERICAL-VALUE-SPECIFICATION>
+                                </INVALID-VALUE>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>RTE</TYPE-EMITTER>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>Interfaces</SHORT-NAME>
+                  <ELEMENTS>
+                    <SENDER-RECEIVER-INTERFACE UUID="301E6179-DF15-4511-804E-45398900FB6B">
+                      <SHORT-NAME>IfVeSMSuThdRwLtStCshnFldUpwdDnwdPos</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="E67DC517-B0BA-4E74-8E89-B07024C938F9">
+                          <SHORT-NAME>Val</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                      <INVALIDATION-POLICYS>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/Interfaces/IfVeSMSuThdRwLtStCshnFldUpwdDnwdPos/Val</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                      </INVALIDATION-POLICYS>
+                    </SENDER-RECEIVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterface</SHORT-NAME>
+                  <ELEMENTS>
+                    <CLIENT-SERVER-INTERFACE UUID="2884B672-85C5-4585-B86C-4D70C8946DD4">
+                      <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPosSelc</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="77928142-78B7-4517-A71C-8452871A2F8D">
+                          <SHORT-NAME>Cal</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <CLIENT-SERVER-INTERFACE UUID="2A609FAD-8222-49C1-97FD-5D845FF788A1">
+                      <SHORT-NAME>VIPLExit557TrgtPos</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="89C60645-5D84-4085-9871-C0D43F9CC2FC">
+                          <SHORT-NAME>Get</SHORT-NAME>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="218E83D1-15F7-40A5-B9F9-21EEEB7A51D7">
+                              <SHORT-NAME>SecRwLtStBkReclnTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="D58B3490-CE5A-4043-BDFE-0C866F05AA09">
+                              <SHORT-NAME>SecRwLtStZeroTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="FB8ACB18-BBC3-4B17-8E3E-852471EEFFB0">
+                              <SHORT-NAME>SecRwLtStLgrstUpwdDnwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="4F82D823-7E31-426F-831D-D1B9C32CB334">
+                              <SHORT-NAME>SecRwLtStLgrstInwdOtwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="9D9A2B40-F046-4ABC-A3F6-E209C7CF3873">
+                              <SHORT-NAME>ThdRwLtStBkReclnTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="67738C6C-3D88-41DF-948B-FAB894D4D669">
+                              <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="BB7BB8B5-D653-4BDB-8072-BCE718FD9702">
+                              <SHORT-NAME>SecRwLtStFwdBkwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION UUID="45989A96-EB0B-457B-A19E-027618044347">
+                          <SHORT-NAME>Set</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <CLIENT-SERVER-INTERFACE UUID="96D7A5FB-048B-4133-9D44-2EDEA58B7087">
+                      <SHORT-NAME>VIPRExit557TrgtPos</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION UUID="4370F61C-FA6A-434F-A07A-2E7C0CD86D60">
+                          <SHORT-NAME>Get</SHORT-NAME>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="C81840B4-7436-4D37-BBC1-CDBF3A78B2A8">
+                              <SHORT-NAME>SecRwRtStBkReclnTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="74938E38-6F33-4BEF-88FC-038273EC589C">
+                              <SHORT-NAME>SecRwRtStZeroTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="152D12FA-F207-4201-88D4-482B3D14D10F">
+                              <SHORT-NAME>SecRwRtStLgrstUpwdDnwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="76B21C00-0AF2-4B6E-9694-B44223DB017E">
+                              <SHORT-NAME>SecRwRtStLgrstInwdOtwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="48A6877A-F7DB-470C-AE76-888C3836ED15">
+                              <SHORT-NAME>ThdRwLtStBkReclnTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="522345F0-D791-48C5-936A-F252D7B3D740">
+                              <SHORT-NAME>ThdRwLtStFwdBkwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="3CCB9AE3-DC6B-4096-9804-2F3FD30EF539">
+                              <SHORT-NAME>ThdRwRtStBkReclnTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="CCA4E548-3DE6-4D26-A515-F60C5C7C4FBA">
+                              <SHORT-NAME>ThdRwRtStFwdBkwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="6A231839-CF31-4191-933C-E4F6371CA953">
+                              <SHORT-NAME>PassStBkReclnTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="AC702593-CDC0-45C4-8131-B125ABDEB8FA">
+                              <SHORT-NAME>PassStFwdBkwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="A414DEF7-71EE-4FC3-A3C0-B7E20D5D085B">
+                              <SHORT-NAME>SecRwRtStFwdBkwdTrgtPos</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/UInt16</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                              <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                        </CLIENT-SERVER-OPERATION>
+                        <CLIENT-SERVER-OPERATION UUID="A09C059D-F021-47E1-B2EF-E7FFB31EF659">
+                          <SHORT-NAME>Set</SHORT-NAME>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                    </CLIENT-SERVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE UUID="EB1A9BAF-51A1-4E16-87A0-88CC79004CBE">
+                      <SHORT-NAME>StNumFlg</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="8E54DEB9-5F5D-4DF6-BFD3-9AEF69F60BB0">
+                          <SHORT-NAME>Is4s</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="3C528E56-6C5E-4AAD-9733-DDFEAE661C8B">
+                          <SHORT-NAME>Is6s</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="B3887488-E28F-45F2-81E3-0F82219F62B0">
+                          <SHORT-NAME>Is6s7s</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                        <VARIABLE-DATA-PROTOTYPE UUID="95019411-BE8E-46A1-A956-838969D57590">
+                          <SHORT-NAME>Is7s</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/Facility/DataTypes/Implementation/Boolean</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                      <INVALIDATION-POLICYS>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is4s</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is6s7s</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/StNumFlg/Is7s</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                      </INVALIDATION-POLICYS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE UUID="49EEDEE3-F484-4D85-814D-66990F3B71C5">
+                      <SHORT-NAME>TrgtPosCalibArray</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE UUID="CAAE42EA-0CAA-4C6E-82D9-DC9E5ECB3884">
+                          <SHORT-NAME>TrgtPosArray</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">0:Pos
+1:Max
+2:Min</L-2>
+                          </DESC>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/PATAC/MSM/ModeAdjust/DataType/TrgtPosCalibArray</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                      <INVALIDATION-POLICYS>
+                        <INVALIDATION-POLICY>
+                          <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PATAC/MSM/ModeAdjust/PortInterface/TrgtPosCalibArray/TrgtPosArray</DATA-ELEMENT-REF>
+                          <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+                        </INVALIDATION-POLICY>
+                      </INVALIDATION-POLICYS>
+                    </SENDER-RECEIVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
