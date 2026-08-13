@@ -116,21 +116,47 @@ class ModeAdjustAIAgent:
                     
     def _review_caller_pattern(self):
         """评审Caller模式一致性"""
-        caller_modules = [
-            "ModeAdjustCaller", "DrvStCaller", "PassStCaller",
-            "SecRwLtStCaller", "ModeStEnCtrlCaller"
+        # Standard seat Callers: expected to have exactly 1 P-Port
+        # (Server interface for Cal operation via OperationInvokedEvent)
+        standard_callers = [
+            "DrvStCaller", "PassStCaller",
+            "SecRwLtStCaller", "SecRwRtStCaller",
+            "ThdRwLtStCaller", "ThdRwRtStCaller",
+            "ModeStEnCtrlCaller"
+        ]
+        # Top-level Callers: expected to have 0 P-Ports
+        # (pure dispatchers that only call downstream via R-Ports)
+        top_level_callers = [
+            "ModeAdjustCaller", "ModeStatAndRspCaller"
+        ]
+        # Special Callers: may have extra P-Ports for S/R output
+        # e.g. MdEnAndBsyChk_Caller outputs IsStBsy32Bit + modestate32Bit
+        special_callers = [
+            "MdEnAndBsyChk_Caller", "CHM2Ctrl_Caller",
+            "ModeRspCaller", "ModeStateCtrlCaller"
         ]
         
         modules = self._parse_modules_from_summary()
         
-        for caller in caller_modules:
+        for caller in standard_callers:
+            if caller in modules:
+                p_ports = modules[caller].get("p_ports", 0)
+                if p_ports != 1:
+                    self.issues.append({
+                        "type": "caller_pattern_violation",
+                        "severity": "medium",
+                        "message": "Standard Caller {} has {} P-Ports (expected 1 Cal Server port)".format(caller, p_ports),
+                        "module": caller
+                    })
+        
+        for caller in top_level_callers:
             if caller in modules:
                 p_ports = modules[caller].get("p_ports", 0)
                 if p_ports > 0:
                     self.issues.append({
                         "type": "caller_pattern_violation",
                         "severity": "medium",
-                        "message": "Caller {} has {} P-Ports (should be 0)".format(caller, p_ports),
+                        "message": "Top-level Caller {} has {} P-Ports (expected 0, pure dispatcher)".format(caller, p_ports),
                         "module": caller
                     })
                     
@@ -162,9 +188,20 @@ class ModeAdjustAIAgent:
         """评审模块接口合理性"""
         modules = self._parse_modules_from_summary()
         
+        # Architecture composition modules naturally have high port counts
+        arch_modules = {"ModeAdjustArch", "ModeStatAndRspArch"}
+        
         for module_name, module_info in modules.items():
             r_ports = module_info.get("r_ports", 0)
             p_ports = module_info.get("p_ports", 0)
+            
+            # Skip architecture composition modules
+            if module_name in arch_modules:
+                continue
+            
+            # Skip ForTest variants
+            if "ForTest" in module_name:
+                continue
             
             if r_ports > 150:
                 self.issues.append({
