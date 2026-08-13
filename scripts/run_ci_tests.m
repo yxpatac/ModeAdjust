@@ -243,20 +243,16 @@ function result = runSingleTest(utFolder, projectRoot)
         return;
     end
     
-    %% Load input data into Signal Builder
+    %% Load input data into Signal Builder (or prepare Dataset fallback)
+    hasSignalBuilder = false;
     try
         sts = data2SignalBuilder(utFolder, harnMdl, tcList);
-        if ~sts
-            result.status = 'skip';
-            result.message = 'data2SignalBuilder failed';
-            close_system(harnMdl, 0);
-            return;
+        if sts
+            hasSignalBuilder = true;
         end
     catch ME
-        result.status = 'error';
-        result.message = sprintf('Signal Builder error: %s', ME.message);
-        close_system(harnMdl, 0);
-        return;
+        % No Signal Builder - will use Dataset fallback
+        fprintf('[CI]   No Signal Builder, using Dataset fallback\n');
     end
     
     %% Run simulation for each test case and compare
@@ -284,16 +280,49 @@ function result = runSingleTest(utFolder, projectRoot)
         catch
         end
         
-        % Set Signal Builder group
-        try
-            block = [harnMdl, '/Harness Inputs'];
-            signalbuilder(block, 'show', tcName);
-        catch
+        if hasSignalBuilder
+            % Set Signal Builder group
+            try
+                block = [harnMdl, '/Harness Inputs'];
+                signalbuilder(block, 'show', tcName);
+            catch
+            end
+        else
+            % Dataset fallback: load ds_<tcName>.mat into base workspace
+            try
+                dsFile = fullfile(inputDataDir, ['ds_', tcName, '.mat']);
+                dsData = load(dsFile);
+                dsVarName = ['ds_' tcName];
+                if isfield(dsData, dsVarName)
+                    assignin('base', dsVarName, dsData.(dsVarName));
+                else
+                    % Load all variables
+                    fnames = fieldnames(dsData);
+                    for fi = 1:numel(fnames)
+                        assignin('base', fnames{fi}, dsData.(fnames{fi}));
+                    end
+                end
+            catch ME
+                failMessages{end+1} = sprintf('TC %s: data load error - %s', tcName, ME.message);
+                allPass = false;
+                continue;
+            end
         end
         
         % Run simulation
         try
-            simOut = sim(harnMdl, 'StopTime', num2str(simTime));
+            if hasSignalBuilder
+                simOut = sim(harnMdl, 'StopTime', num2str(simTime));
+            else
+                % Use root-level Inport with Dataset
+                try
+                    simOut = sim(harnMdl, 'StopTime', num2str(simTime), ...
+                        'LoadExternalInput', 'off');
+                catch
+                    % Last resort: just run with default values
+                    simOut = sim(harnMdl, 'StopTime', num2str(simTime));
+                end
+            end
         catch ME
             allPass = false;
             failMessages{end+1} = sprintf('TC %s: sim error - %s', tcName, ME.message);

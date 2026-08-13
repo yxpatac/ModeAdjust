@@ -1,5 +1,11 @@
 # Simulink/MATLAB
 *.mat
+# Exceptions: UT harness test data (CI needs these)
+!**/UT_*/testData_tab.mat
+!**/UT_*/InputData/
+!**/UT_*/InputData/*.mat
+!**/UT_*/CalData/
+!**/UT_*/CalData/*.mat
 *_ert_rtw/
 *_grt_rtw/
 *_autosar_rtw/
@@ -46,5 +52,10 @@ gh.zip
 extract_ports.ps1
 setup_github_ai_review.py
 
-# Long path files (Windows limit)
-UT_*/
+# UT harness generated output (keep test data, exclude reports/models)
+**/UT_*/UnitTestModel/
+**/UT_*/OutputData/
+**/UT_*/Reports/
+**/UT_*/UnitTestReport/
+**/UT_*/UnitTestVector/
+*_harness.xlsx
