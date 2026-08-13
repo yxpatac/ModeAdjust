@@ -7,6 +7,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+env:
+  REPO_PATH: C:\1work_project\6-557\Model\ModeAdjust
+
 jobs:
   unit-test:
     runs-on: self-hosted
@@ -17,25 +20,32 @@ jobs:
       issues: write
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v5
-      with:
-        fetch-depth: 1
-      
+    - name: Sync local repo
+      shell: powershell
+      run: |
+        Write-Host "[CI] Syncing local repo to ${{ github.sha }}..."
+        $env:HTTPS_PROXY = "http://10.203.49.76:8080"
+        $env:HTTP_PROXY = "http://10.203.49.76:8080"
+        Push-Location "${{ env.REPO_PATH }}"
+        git fetch origin ${{ github.sha }} --depth=1 2>&1
+        git checkout ${{ github.sha }} 2>&1
+        Pop-Location
+        Write-Host "[CI] Repo synced."
+        
     - name: Run MATLAB Unit Tests
       shell: powershell
       run: |
         Write-Host "[CI] Starting MATLAB unit tests..."
-        Write-Host "[CI] Workspace: ${{ github.workspace }}"
-        matlab -batch "cd('${{ github.workspace }}'); run('scripts/run_ci_tests.m')"
+        Write-Host "[CI] Workspace: ${{ env.REPO_PATH }}"
+        matlab -batch "cd('${{ env.REPO_PATH }}'); run('scripts/run_ci_tests.m')"
       env:
-        GITHUB_WORKSPACE: ${{ github.workspace }}
+        GITHUB_WORKSPACE: ${{ env.REPO_PATH }}
         
     - name: Publish Test Results
       uses: mikepenz/action-junit-report@v5
       if: always()
       with:
-        report_paths: test-results.xml
+        report_paths: ${{ env.REPO_PATH }}\test-results.xml
         fail_on_failure: true
         detailed_summary: true
 
@@ -48,8 +58,8 @@ jobs:
           const path = require('path');
           
           try {
-            // Parse JUnit XML for summary
-            const xmlPath = path.join(process.env.GITHUB_WORKSPACE, 'test-results.xml');
+            const repoPath = process.env.REPO_PATH || process.env.GITHUB_WORKSPACE;
+            const xmlPath = path.join(repoPath, 'test-results.xml');
             if (!fs.existsSync(xmlPath)) {
               console.log('No test-results.xml found');
               return;
@@ -57,7 +67,6 @@ jobs:
             
             const xml = fs.readFileSync(xmlPath, 'utf8');
             
-            // Extract counts from testsuite element
             const testsMatch = xml.match(/tests="(\d+)"/);
             const failMatch = xml.match(/failures="(\d+)"/);
             const errMatch = xml.match(/errors="(\d+)"/);
@@ -73,7 +82,6 @@ jobs:
             const passed = parseInt(tests) - parseInt(failures) - parseInt(errors) - parseInt(skipped);
             const statusIcon = (parseInt(failures) + parseInt(errors) > 0) ? ':x:' : ':white_check_mark:';
             
-            // Extract failed test names
             let failDetails = '';
             const failRegex = /<testcase name="([^"]+)"[^>]*>[\s\S]*?<failure message="([^"]*)"/g;
             let match;
@@ -113,7 +121,7 @@ jobs:
       if: always()
       shell: powershell
       run: |
-        $xml = Get-Content test-results.xml -Raw -ErrorAction SilentlyContinue
+        $xml = Get-Content "${{ env.REPO_PATH }}\test-results.xml" -Raw -ErrorAction SilentlyContinue
         if ($xml) {
             if ($xml -match 'failures="([1-9]\d*)"|errors="([1-9]\d*)"') {
                 Write-Host "::error::Unit tests have failures or errors"
