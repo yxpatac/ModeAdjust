@@ -24,19 +24,15 @@ jobs:
     
     steps:
     - name: Sync local repo
-      shell: powershell
+      shell: cmd
       run: |
-        Write-Host "[CI] Syncing local repo to ${{ github.sha }}..."
-        $env:HTTPS_PROXY = "http://10.203.49.76:8080"
-        $env:HTTP_PROXY = "http://10.203.49.76:8080"
-        Push-Location "${{ env.REPO_PATH }}"
-        git fetch origin main 2>&1
-        git checkout ${{ github.sha }}  2>&1
-        if ($LASTEXITCODE -ne 0) {
-            Write-Host "::warning::Checkout failed, using current HEAD"
-        }
-        Pop-Location
-        Write-Host "[CI] Repo synced."
+        echo [CI] Syncing local repo to ${{ github.sha }} ...
+        set HTTPS_PROXY=http://10.203.49.76:8080
+        set HTTP_PROXY=http://10.203.49.76:8080
+        cd /d ${{ env.REPO_PATH }} 
+        git fetch origin main
+        git checkout ${{ github.sha }} 
+        echo [CI] Repo synced.
         
     - name: Run MATLAB Unit Tests
       shell: powershell
@@ -45,7 +41,7 @@ jobs:
         Write-Host "[CI] Workspace: ${{ env.REPO_PATH }}"
         matlab -batch "cd('${{ env.REPO_PATH }}'); run('scripts/run_ci_tests.m')"
       env:
-        GITHUB_WORKSPACE: ${{ env.REPO_PATH }}
+        GITHUB_WORKSPACE: ${{ env.REPO_PATH }} 
 
     - name: Process Test Results
       if: always()
