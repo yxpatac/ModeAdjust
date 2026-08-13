@@ -1,5 +1,6 @@
 name: Simulink Unit Test
 
+
 on:
   pull_request:
     branches: [ main, develop ]
@@ -7,8 +8,10 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+
 env:
   REPO_PATH: C:\1work_project\6-557\Model\ModeAdjust
+
 
 jobs:
   unit-test:
@@ -40,94 +43,25 @@ jobs:
         matlab -batch "cd('${{ env.REPO_PATH }}'); run('scripts/run_ci_tests.m')"
       env:
         GITHUB_WORKSPACE: ${{ env.REPO_PATH }}
-        
-    - name: Publish Test Results
-      uses: mikepenz/action-junit-report@v5
-      if: always()
-      with:
-        report_paths: ${{ env.REPO_PATH }}\test-results.xml
-        fail_on_failure: true
-        detailed_summary: true
 
-    - name: Comment PR with Test Summary
-      if: github.event_name == 'pull_request' && always()
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const fs = require('fs');
-          const path = require('path');
-          
-          try {
-            const repoPath = process.env.REPO_PATH || process.env.GITHUB_WORKSPACE;
-            const xmlPath = path.join(repoPath, 'test-results.xml');
-            if (!fs.existsSync(xmlPath)) {
-              console.log('No test-results.xml found');
-              return;
-            }
-            
-            const xml = fs.readFileSync(xmlPath, 'utf8');
-            
-            const testsMatch = xml.match(/tests="(\d+)"/);
-            const failMatch = xml.match(/failures="(\d+)"/);
-            const errMatch = xml.match(/errors="(\d+)"/);
-            const skipMatch = xml.match(/skipped="(\d+)"/);
-            const timeMatch = xml.match(/time="([\d.]+)"/);
-            
-            const tests = testsMatch ? testsMatch[1] : '0';
-            const failures = failMatch ? failMatch[1] : '0';
-            const errors = errMatch ? errMatch[1] : '0';
-            const skipped = skipMatch ? skipMatch[1] : '0';
-            const time = timeMatch ? timeMatch[1] : '0';
-            
-            const passed = parseInt(tests) - parseInt(failures) - parseInt(errors) - parseInt(skipped);
-            const statusIcon = (parseInt(failures) + parseInt(errors) > 0) ? ':x:' : ':white_check_mark:';
-            
-            let failDetails = '';
-            const failRegex = /<testcase name="([^"]+)"[^>]*>[\s\S]*?<failure message="([^"]*)"/g;
-            let match;
-            while ((match = failRegex.exec(xml)) !== null) {
-              failDetails += `\n- **${match[1]}**: ${match[2]}`;
-            }
-            
-            const errRegex = /<testcase name="([^"]+)"[^>]*>[\s\S]*?<error message="([^"]*)"/g;
-            while ((match = errRegex.exec(xml)) !== null) {
-              failDetails += `\n- **${match[1]}**: ${match[2]}`;
-            }
-            
-            let body = `## ${statusIcon} Unit Test Results\n\n`;
-            body += `| Metric | Value |\n|--------|-------|\n`;
-            body += `| Total | ${tests} |\n`;
-            body += `| Passed | ${passed} |\n`;
-            body += `| Failed | ${failures} |\n`;
-            body += `| Errors | ${errors} |\n`;
-            body += `| Skipped | ${skipped} |\n`;
-            body += `| Duration | ${time}s |\n`;
-            
-            if (failDetails) {
-              body += `\n### Failed Tests\n${failDetails}\n`;
-            }
-            
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: body
-            });
-          } catch (error) {
-            console.log('Failed to post test comment:', error);
-          }
-
-    - name: Fail if critical issues
+    - name: Process Test Results
       if: always()
       shell: powershell
       run: |
-        $xml = Get-Content "${{ env.REPO_PATH }}\test-results.xml" -Raw -ErrorAction SilentlyContinue
-        if ($xml) {
+        $xmlPath = "${{ env.REPO_PATH }}\test-results.xml"
+        if (Test-Path $xmlPath) {
+            $xml = Get-Content $xmlPath -Raw
+            Write-Host "=== Test Results ==="
+            if ($xml -match 'tests="(\d+)"') { Write-Host "Total: $($Matches[1])" }
+            if ($xml -match 'failures="(\d+)"') { Write-Host "Failures: $($Matches[1])" }
+            if ($xml -match 'errors="(\d+)"') { Write-Host "Errors: $($Matches[1])" }
+            if ($xml -match 'skipped="(\d+)"') { Write-Host "Skipped: $($Matches[1])" }
+            
             if ($xml -match 'failures="([1-9]\d*)"|errors="([1-9]\d*)"') {
                 Write-Host "::error::Unit tests have failures or errors"
                 exit 1
             }
             Write-Host "::notice::All unit tests passed"
         } else {
-            Write-Host "::warning::No test-results.xml found"
+            Write-Host "::warning::No test-results.xml found at $xmlPath"
         }
