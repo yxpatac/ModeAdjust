@@ -7,8 +7,11 @@ function run_ci_tests()
 %   Designed for GitHub Actions self-hosted runner (no GUI required).
 
 %% Configuration
-projectRoot = getenv('GITHUB_WORKSPACE');
-if isempty(projectRoot)
+projectRoot = getenv('REPO_PATH');
+if isempty(projectRoot) || ~exist(projectRoot, 'dir')
+    projectRoot = getenv('GITHUB_WORKSPACE');
+end
+if isempty(projectRoot) || ~exist(projectRoot, 'dir')
     projectRoot = fileparts(fileparts(mfilename('fullpath')));
 end
 fprintf('[CI] Project root: %s\n', projectRoot);
