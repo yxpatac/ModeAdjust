@@ -89,6 +89,8 @@ for i = 1:numel(utDirs)
 end
 
 %% Generate final JUnit XML report
+% Clear cleanup handler first - it captured empty results{} at creation time
+clear cleanupObj;
 generateJUnitXML(results, reportPath);
 fprintf('\n[CI] JUnit report written to: %s\n', reportPath);
 
