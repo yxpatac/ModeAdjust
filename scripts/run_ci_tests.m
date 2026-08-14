@@ -241,7 +241,12 @@ function result = runSingleTest(utFolder, projectRoot)
     if exist(calDataDir, 'dir')
         calFiles = dir(fullfile(calDataDir, '*.mat'));
         for ci = 1:numel(calFiles)
-            load(fullfile(calDataDir, calFiles(ci).name));
+            % Load into base workspace so Simulink can resolve parameters
+            calData = load(fullfile(calDataDir, calFiles(ci).name));
+            calFields = fieldnames(calData);
+            for cfi = 1:numel(calFields)
+                assignin('base', calFields{cfi}, calData.(calFields{cfi}));
+            end
         end
     end
     
@@ -304,7 +309,11 @@ function result = runSingleTest(utFolder, projectRoot)
             calName = tbl.calSet{tcIdx};
             calFile = fullfile(calDataDir, [calName, '.mat']);
             if exist(calFile, 'file')
-                load(calFile);
+                calSetData = load(calFile);
+                calSetFields = fieldnames(calSetData);
+                for csfi = 1:numel(calSetFields)
+                    assignin('base', calSetFields{csfi}, calSetData.(calSetFields{csfi}));
+                end
             end
         catch
         end
