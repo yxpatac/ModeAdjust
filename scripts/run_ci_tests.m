@@ -245,6 +245,23 @@ function result = runSingleTest(utFolder, projectRoot)
         end
     end
     
+    %% Run enum type definitions before loading model
+    % Some models use Simulink.defineIntEnumType for Constant block values
+    moduleDir = fileparts(utFolder);
+    moduleParentDir = fileparts(moduleDir);
+    enumDirs = {moduleDir, moduleParentDir};
+    for edi = 1:numel(enumDirs)
+        if exist(enumDirs{edi}, 'dir')
+            enumFiles = dir(fullfile(enumDirs{edi}, '*_defineIntEnumTypes.m'));
+            for efi = 1:numel(enumFiles)
+                try
+                    run(fullfile(enumDirs{edi}, enumFiles(efi).name));
+                catch
+                end
+            end
+        end
+    end
+    
     %% Load harness model
     addpath(harnDir);
     try
